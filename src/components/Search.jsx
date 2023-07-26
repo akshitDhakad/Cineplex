@@ -8,7 +8,7 @@ function Search() {
 
   function handleSearch(e) {
     e.preventDefault();
-    console.log(searchValue);
+    
  
   }
 

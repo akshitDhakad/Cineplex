@@ -1,5 +1,5 @@
 import { useState, useEffect, Suspense, lazy } from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client'; // Fix the import statement here
 import './index.css';
 import Spinner from './components/Spinner.jsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -45,14 +45,6 @@ const Root = () => {
 };
 
 ReactDOM.createRoot(spinnerRoot).render(<Root />);
-
-
-
-
-
-
-
-
 
 
 
