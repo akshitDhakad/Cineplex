@@ -157,3 +157,29 @@ button{
 }
 
 
+/* scroll bar styling ***************************** */
+
+::-webkit-scrollbar {
+  width: 10px !important;
+}
+
+/* Change scrollbar track (background) color */
+::-webkit-scrollbar-track {
+  background-color: #00121f;
+}
+
+/* Change scrollbar thumb (handle) color */
+::-webkit-scrollbar-thumb {
+  background-color: #8abee433;
+  border-radius: 10px;
+}
+
+/* Change scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #8abee433 /* Change the color of the thumb on hover */
+}
+
+/* Change scrollbar thumb on active (clicking) */
+::-webkit-scrollbar-thumb:active {
+  background-color: #8abee433; 
+}

@@ -7,22 +7,23 @@ import Filters from "./Filters";
 import { Link } from 'react-router-dom';
 
 function Series() {
-  
+  const apiKey = import.meta.env.VITE_API_KEY
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const loaderRef = useRef(null);
+  const [filter, setfilter] = useState("");
 
   useEffect(() => {
     const options = {
       method: 'GET',
       headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYzdlYTkxNGY3OTY3M2Q1OTRiYzU5OTNhYjEwNmNkMCIsInN1YiI6IjY0YWU3MDllOGEwZTliMDBhZGFjMmE2YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4nMuIyE282XdwUdFXPHYgKOe2pKu47fW3BPUsmv1OCE',
+        Authorization: `Bearer ${apiKey}`,
       },
     };
 
     const fetchData = () => {
-      fetch(`https://api.themoviedb.org/3/discover/tv?page=${page}`, options)
+      fetch(`https://api.themoviedb.org/3/discover/tv?page=${page}&with_genres=${filter}`, options)
         .then(response => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -62,7 +63,7 @@ function Series() {
         observer.unobserve(loaderRef.current);
       }
     };
-  }, [page]);
+  }, [page,filter]);
 
   return (
     <div className="series">
@@ -70,7 +71,7 @@ function Series() {
         <div><Link to={"/explore/movies"}>Movie</Link></div>
         <div><Link to={"/explore/Series"}>Series</Link></div>
         <div>Search</div>
-        <div><Filters genre="tv"/></div>
+        <div><Filters genre="tv" data={setfilter}/></div>
       </div>
       <div className="item2">
           {data.map((item) =>

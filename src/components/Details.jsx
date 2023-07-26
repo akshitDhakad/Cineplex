@@ -6,6 +6,7 @@ import Recommendation from "./Recommendation";
 
 
 function Details() {
+  const apiKey = import.meta.env.VITE_API_KEY
   const { type } = useParams();
   const location = useLocation();
   const query = new URLSearchParams(location.search);
@@ -22,8 +23,7 @@ function Details() {
         method: "GET",
         headers: {
           accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYzdlYTkxNGY3OTY3M2Q1OTRiYzU5OTNhYjEwNmNkMCIsInN1YiI6IjY0YWU3MDllOGEwZTliMDBhZGFjMmE2YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4nMuIyE282XdwUdFXPHYgKOe2pKu47fW3BPUsmv1OCE",
+          Authorization:`Bearer ${apiKey}`,
         },
       };
 

@@ -1,5 +1,5 @@
 import { useState, useEffect, Suspense, lazy } from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import Spinner from './components/Spinner.jsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';

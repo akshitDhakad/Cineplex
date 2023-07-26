@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react"
 
 function Filters(props) {
-
+  const apiKey = import.meta.env.VITE_API_KEY
     const[data,setData]=useState([])
 
 
@@ -10,7 +10,7 @@ function Filters(props) {
             method: 'GET',
             headers: {
               accept: 'application/json',
-              Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYzdlYTkxNGY3OTY3M2Q1OTRiYzU5OTNhYjEwNmNkMCIsInN1YiI6IjY0YWU3MDllOGEwZTliMDBhZGFjMmE2YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4nMuIyE282XdwUdFXPHYgKOe2pKu47fW3BPUsmv1OCE'
+              Authorization: `Bearer ${apiKey}`
             }
           };
           
