@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import Button from "./Button"
-import Mcard from "./mCard";
+import Mcard from "./Mcard";
 
 
 function Tseries() {

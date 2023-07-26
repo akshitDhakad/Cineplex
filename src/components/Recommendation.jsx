@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import Mcard from "./mCard";
+import Mcard from "./Mcard";
 
 function useInfiniteScroll(callback) {
   const [isFetching, setIsFetching] = useState(false);
