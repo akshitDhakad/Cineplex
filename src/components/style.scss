@@ -1,0 +1,1620 @@
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+<<<<<<< HEAD
+      @content;
+    }
+  }
+  
+  @mixin tablet {
+    @media screen and (max-width: 976px) {
+      @content;
+    }
+  }
+
+  .navbar {
+    background-color: #00121f92;
+    display: flex;
+
+    .navbar:hover {
+        transform: translateY(-50px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transition-delay: 1s;
+      }
+    .navbar-toggler-bg-color {
+      background-color: goldenrod;
+    }
+  
+    .item1 {
+      font-size: xx-large;
+      display: flex;
+      align-items: center;
+      color: goldenrod;
+    }
+  
+    .item2 {
+      margin-left: auto;
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+      color: goldenrod;
+      div{
+        margin: 10px;
+        font-size: larger;
+        @include mobile{
+          margin: 5px;
+          font-size: small;
+        }
+      }
+  
+   
+    }
+}
+  
+
+// ******************************  Home page styling ************************
+.home{
+    height: 100vh;
+    background-image: url("https://source.unsplash.com/1200x960/?dark,movie");
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+
+    .item2{
+        
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include mobile{
+                width: 90%;
+            
+            }
+
+            h2{
+                font-size: 5rem;
+                font-weight: 700;
+                @include mobile{
+                    font-size: 3rem;
+                
+                }
+            }
+
+            h4{
+                text-align: center;
+                
+            }
+            div:last-child{
+                @include mobile{
+                    width: 100%;
+                
+                }
+
+               
+                .searchbtn{
+                    width: 60%;
+                    background-color: white;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    display: flex;
+                    @include mobile{
+                        width: 100%;
+                    
+                    }
+
+                    input,button{
+                        padding: 10px;
+                        border: none;
+                        flex-shrink: 1;
+                    }
+                    input{
+                        flex: 3;
+                        border: none;
+                        outline: none;
+                        flex-basis: 1;
+                    }
+                    button{
+                        background-color: #1D5B79;
+                    }
+                    
+                    
+                }
+
+            }
+        }
+        
+    }
+}
+
+// ************************* main  page styling ************************
+.main{
+    height: 100vh;
+    box-shadow: 0px 100px 400px 250px #00121f;
+}
+// ************************* Trending  page styling ************************
+.trending,.tmovies,.tseries {
+        height: 90vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 5fr;
+        margin-top: 50px;
+        padding: 10px;
+    .item1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .item2 {
+        height:100% ;
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+  
+    }
+    
+    .mcard-wrapper {
+        padding: 5px;
+        height: 100%;
+        display: flex;
+        column-gap: 20px;
+        align-items: flex-start;  
+  }
+}
+  
+// ************************ mcard section  *************************************************
+
+.mcard{
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+   
+
+    .img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+        box-shadow: 1px 1px 5px 5px rgba(255, 255, 255, 0.252);
+    }
+
+    .details{
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        @include mobile{
+            text-align: center;
+        }
+        span{
+            font-size: small;
+            @include mobile{
+                font-size: medium;
+            }
+        }
+        span:last-child{
+            font-size: xx-smaller;
+        }
+    }
+}
+
+
+// **************** explore movie/series section *****************************************************************************
+.movie,.series,.Recommendation{
+
+    box-sizing: border-box;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    gap: 20px;
+
+    *{
+      box-sizing: border-box;
+    }
+
+    .mcard{
+      @include mobile{
+        max-width: 80%;
+        height: 10%;
+    }
+      @include tablet{
+        width: 90%;
+        height: 10%;
+    }
+
+    }
+
+    .item1{
+        padding: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: rgba(211, 211, 211, 0.553);
+        position: sticky;
+        width: 100%;
+        top: 0px;
+        color: goldenrod;
+        align-items: center;
+        @include mobile{
+          width: 100%;
+        
+      }
+        @include tablet{
+          width: 100%;
+        
+      }
+    }
+
+    .item2{
+         box-sizing: border-box;  
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 100px;
+      
+        
+
+        @include mobile{      
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+
+        }
+        @include tablet{
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items: center;
+                  
+           
+
+        }
+       
+    }
+}
+
+
+// ****************** filters *******************************************
+
+.filter {
+    .dropdown-menu {
+      height: 200px;
+      overflow-y: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .dropdown-menu::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+
+// ***************************** footer ********************************
+
+.footer{
+    color: goldenrod;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .item1{
+        font-size: 50px;
+        font-weight: 600;
+        @include mobile{
+            font-size: 40px;  
+        }
+       
+    }
+    .item2{
+        @include mobile{
+            flex-direction: column;
+            gap: 0px;
+            text-align: center;
+            font-size: 15px;
+            
+        }
+    }
+    .item3{
+        display: flex;
+        gap: 50px;
+
+        @include mobile{
+            flex-direction: column;
+            gap: 0px;
+            text-align: center;
+            font-size: small;
+        }
+       
+    }
+}
+  
+// ********************* card details *************************
+
+.details{
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+margin: 0;
+
+font-family: 'Montserrat', helvetica, arial, sans-serif;
+font-size: 14px;
+font-weight: 400;
+
+
+.movie_card{
+  position: relative;
+  display: block;
+  width: 800px;
+  height: 350px;
+  margin: 100px auto; 
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.4s;
+  &:hover{
+    transform: scale(1.02);
+    transition: all 0.4s;
+  }
+  .info_section{
+    position: relative;
+    width: 100%;
+    height: 100%;
+	  background-blend-mode: multiply;
+    z-index: 2;
+    border-radius: 10px;
+    .movie_header{
+      position: relative;
+      padding: 25px;
+      height: 40%;
+      h1{
+        color: #fff;
+        font-weight: 400;
+      }
+      h4{
+        color: #9ac7fa;
+        font-weight: 400;
+      }
+      .minutes{
+        display: inline-block;
+        margin-top: 10px;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid rgba(255,255,255,0.13);
+      }
+      .type{
+        display: inline-block;
+        color: #cee4fd;
+        margin-left: 10px;
+      }
+      .locandina{
+        position: relative;
+        float: left;
+        margin-right: 20px;
+        height: 120px;
+        box-shadow: 0 0 20px -10px rgba(0,0,0,0.5);
+      }
+    }
+    .movie_desc{
+      padding: 25px;
+      height: 50%;
+      .text{
+        color: #cfd6e1;
+      }
+    }
+    .movie_social{
+      height: 10%;
+      padding-left: 15px;
+      padding-bottom: 20px;
+      ul{
+        list-style: none;
+        padding: 0;
+        li{
+          display: inline-block;
+          color: rgba(255,255,255,0.4);
+          transition: color 0.3s;
+          transition-delay: 0.15s;
+          margin: 0 10px;
+          &:hover{
+            transition: color 0.3s;
+            color: rgba(255,255,255,0.8);
+          }
+          i{
+            font-size: 19px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .blur_back{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    border-radius: 11px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .movie_header{
+    width: 60%;
+  }
+  
+  .movie_desc{
+    width: 50%;
+  }
+  
+  .info_section{
+    background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
+  }
+  
+  .blur_back{
+    width: 100%;
+    background-position: -200% 10% !important;  
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .movie_card{
+    width: 95%;
+    margin: 70px auto; 
+    min-height: 350px;
+    height: auto
+  }
+  
+  
+  
+  .movie_header{
+    width: 100%;
+    margin-top: 85px;
+  }
+  
+  .movie_desc{
+    width: 100%;
+  }
+  
+  .info_section{
+    background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
+    display: inline-grid;
+  }
+}
+#tomb{
+  box-shadow: 0px 0px 150px -45px rgba(19, 160, 134, 0.6);
+  &:hover{
+    box-shadow: 0px 0px 120px -55px rgba(19, 160, 134, 0.6);
+  }
+}
+
+}
+
+
+// **********************    page 404 page **************************
+
+.page404{
+  @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Josefin+Slab');
+
+body {
+  background-color: #aeb6bf;
+}
+@keyframes darken {
+  0%{ font-size: 100px;  color:#566573;}
+  50%{font-size: 200px; color:#273746}
+  100% {font-size: 250px; color:#17202a}
+}
+  
+
+h1 {
+  font-family: 'Alfa Slab One', cursive;
+  margin: 0 auto;
+  inline: block;
+  text-align: center;
+  animation-name: darken;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+h3 {
+  font-family: 'Josefin Slab', serif;
+  margin: 0 auto;
+  inline: block;
+  text-align: center;
+  font-size: 30px;
+}
+
+}
+
+=======
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 787px) {
+        @content;
+    }
+}
+
+
+.home{
+    
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.836);
+    background-image: url("https://source.unsplash.com/random/?dark,movie");
+    background-size: cover;
+    width: 100%;
+
+    @include mobile{
+        max-width: 100%;   
+    }
+   
+    object-fit: cover;
+    // object-position: center;
+    color: white;
+    display: grid;
+    grid-template-rows: 1fr 4fr 1.5fr;
+    box-shadow: -50px -100px 200px 10px rgba(0, 0, 0, 0.543) inset;
+
+    .item2{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        align-items: center;
+        margin: auto;
+        text-align: center;
+
+        @include mobile{
+            width: 90%;
+            text-align: center; 
+        }
+        h2{
+            font-size: 4rem;
+            @include mobile{
+                font-size: 2.5rem; 
+                text-align: center; 
+            }
+        }
+        h3{
+            padding: auto 10px;
+            @include mobile{
+                font-size: 1rem;  
+            }
+        }
+    }
+
+    .item3{
+        width: 50%;
+        margin: auto;
+
+        
+        input{
+            width: 80%;
+            border:0px;
+            outline: 0px;
+            border-radius: 5px 0px 0px 5px;
+            padding: 15px;
+            border-radius: 25px 0px 0px 25px;
+        };
+    
+        .searchBtn{
+            color: white;
+            text-align: center;
+            width: 20%;
+            background-color: rgb(24, 63, 76);
+            padding: 16.5px;
+            border:0px;
+            outline: 0px;
+            border-radius: 0px 25px 25px 0px;
+           
+            
+         }
+        .searchBtn:hover{
+            text-align: center;
+            width: 20%;
+            background-color: rgba(24, 63, 76, 0.524);
+            padding: 15px;
+            border-radius: 0px 25px 25px 0px;
+         }    
+    }      
+}
+
+.navbar{
+
+    height: 100%;
+    display: flex;
+    padding: 25px;
+    background-color:rgba(0, 0, 0, 0.198) ;
+    @include mobile{
+        justify-content: center;
+        padding: 5px;
+    }
+
+    h1{
+        color: yellow;
+        font-weight: 600;
+
+        @include mobile{
+            text-align: center;
+            font-weight: 400;
+        }
+        
+    }
+    .item1{
+        display: flex;
+        gap: 10px; 
+    }
+
+    .item2{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: end;
+        @include mobile{
+            justify-content: space-around;
+        }
+    }
+
+    a
+    {
+        color: rgb(255, 255, 0);
+       
+    }
+    a:hover{
+
+        color: lightyellow
+       
+    }
+    .movies:hover,.series:hover{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: end;
+       
+    }
+    
+}
+
+// ********************* search btn *************************************
+
+.search{
+    
+    input{
+       
+        border:0px;
+        outline: 0px;
+        border-radius: 15px 0px 0px 15px;
+        background-color: rgba(255, 255, 255, 0.22);
+        padding: 5px;
+        @include mobile{
+            display: none
+            
+        }
+    };
+
+    .searchBtn{
+        width: 20%;
+        text-align: center;
+        border:0px;
+        outline: 0px;
+        border-radius:  0px 15px 15px 0px;
+        color: grey;
+        padding: 6px;
+        background-color: rgb(24, 63, 76);
+
+        @include mobile{
+            display: none
+            
+        }
+       
+    }
+
+    .searchBtn:hover{
+        width: 20%;
+        text-align: center;
+        border:0px;
+        outline: 0px;
+        background-color:rgba(24, 63, 76, 0.5);
+        border-radius: 0px 15px 15px 0px;
+        padding: 5.5px
+     }
+     
+     .searchResult{
+        padding: 5px;
+        border-radius: 5px;
+        margin: 10px 0px;
+        background-color: white;
+        border: none;
+        outline: none;
+        opacity: 60%;
+        box-sizing: border-box;
+        color: black;
+     }
+
+}
+
+// *************************** movieexplore section  **********************************
+
+.movieexport{
+   
+    width: 200px;
+    @include mobile{
+        width: 100%;
+    }
+
+    img{
+        width: 200px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+        @include mobile{
+            width: 100%;
+        }
+    }
+
+    .details{
+        display: grid;
+        justify-content: center;
+        font-size: 12px;
+        color: gray;
+        @include mobile{
+            width: 100%;
+        }
+        p{
+            padding: 0px;
+            margin-top: 5px;
+        }
+
+    }
+}
+
+.explore{
+    @include mobile{
+        width: 100%;
+    }
+
+   .exploreContainer{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+
+    @include mobile{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+    } 
+}
+
+@include mobile{
+    .navbar{
+        flex-direction: column;
+        .item1{
+            width: 100%;
+            justify-content: center;
+            
+        }
+        .item2{
+            width: 100%;
+            justify-content: space-around;
+        }
+    }
+} 
+
+
+    
+}
+
+
+
+// *******************************   searchPage   ********************************
+
+.searchPage{
+    height: 100%;
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 1fr 3fr;
+    color: white !important;
+
+    a{
+        color: white;
+    }
+
+    .item1{
+
+        .item1Card{
+            padding: 5px;
+            height: 100px  !important;
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            grid-template-rows: 1fr 1fr;
+            margin-top: 10px;
+            outline: 1px solid lightgray !important;
+          
+            
+            p{
+                margin: 0px;
+            }
+            p:last-child{
+                align-self: flex-end;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                background-position: center;
+                grid-row: 1/-1;
+                grid-column: 2/-1;
+                
+            }
+            .item1Cardpara1{
+                margin-bottom: auto;
+            }
+
+            .item1Cardpara2{
+                margin-top: auto;
+            }
+        } 
+    }
+   
+}
+// ********************************** trending section****************************
+.trending{
+   
+    box-shadow: 0px 20px 100px 100px #020c1b;
+    background-color: #020c1b;
+    padding: 20px;
+    height: 100vh;
+    grid-template-rows: 1fr 4fr;
+    row-gap: 20px;
+
+    @include mobile {
+        grid-template-rows: 1fr auto;
+    }
+
+    
+    .item1{
+        color: grey;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+        @include mobile {
+            font-size: 10px;
+        }
+
+        .switchingTabs .tabItems .tabItem.active {
+            color: rgb(255, 255, 255);
+            background-color: #04152d;
+            border-radius: 15px;
+        }
+        
+        .switchingTabs {
+            height: 34px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 20px;
+            padding: 2px;
+        }
+        .switchingTabs .tabItems {
+            display: flex;
+            align-items: center;
+            height: 30px;
+            position: relative;
+        }
+        .switchingTabs .tabItems .tabItem {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            color: var(--black);
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+            transition: color 0.3s ease 0s;
+        }
+
+        .switchingTabs .tabItems .movingBg {
+            height: 30px;
+            width: 100px;
+            background-image: var(--gradient);
+            position: absolute;
+            left: 0px;
+            border-radius: 15px;
+            transition: left 0.4s cubic-bezier(0.88, -0.35, 0.565, 1.35) 0s;
+        }
+    }
+    .item2{
+
+        
+        height: 80%;
+        font-family: 'Poppins', sans-serif;
+        /* -webkit-user-select: none; */ /* You can leave or remove this line if not needed */
+        /* -moz-user-select: -moz-none; */ /* You can leave or remove this line if not needed */
+        -o-user-select: none;
+        user-select: none;
+        display: flex;
+        overflow: hidden;
+
+        // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+        @include mobile{
+            width: 100%;
+        }
+       
+
+        .card{
+            margin-top: 30px;
+            width: 200px;
+            height: 100%;
+            overflow: hidden !important;
+            border: 0px;
+            outline: 0px;
+            border-radius: 15px;
+            background-color: #020c1b;
+            @include mobile{
+                width: 100%;
+            }
+                P{
+                    margin: 5px;
+                }
+                p:last-child{
+                    font-size: x-small;
+                }
+
+                @include mobile{
+                    width: 100%;
+
+                }
+            }
+    }
+           
+}
+// ***************************** Trending movies section  *************************
+.moviessection{
+   
+    box-shadow: 0px 20px 100px 100px #020c1b;
+    background-color: #020c1b;
+    padding: 20px;
+    height: 100vh;
+    grid-template-rows: 1fr 4fr;
+    row-gap: 20px;
+    @include mobile{
+        width: 100%;
+    }
+    
+    
+    .item1{
+        color: grey;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+
+        .switchingTabs .tabItems .tabItem.active {
+            color: rgb(255, 255, 255);
+            background-color: #04152d;
+            border-radius: 15px;
+        }
+        
+        .switchingTabs {
+            height: 34px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 20px;
+            padding: 2px;
+        }
+        .switchingTabs .tabItems {
+            display: flex;
+            align-items: center;
+            height: 30px;
+            position: relative;
+        }
+        .switchingTabs .tabItems .tabItem {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            color: var(--black);
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+            transition: color 0.3s ease 0s;
+        }
+
+        .switchingTabs .tabItems .movingBg {
+            height: 30px;
+            width: 100px;
+            background-image: var(--gradient);
+            position: absolute;
+            left: 0px;
+            border-radius: 15px;
+            transition: left 0.4s cubic-bezier(0.88, -0.35, 0.565, 1.35) 0s;
+        }
+    }
+    .item2{
+
+        
+        height: 80%;
+        font-family: 'Poppins', sans-serif;
+        /* -webkit-user-select: none; */ /* You can leave or remove this line if not needed */
+        /* -moz-user-select: -moz-none; */ /* You can leave or remove this line if not needed */
+        -o-user-select: none;
+        user-select: none;
+        display: flex;
+        overflow: hidden;
+
+        // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        @include mobile{
+            width: 100%;
+        }
+       
+
+        .card{
+            margin-top: 30px;
+            width: 200px;
+            height: 100%;
+            overflow: hidden !important;
+            border: 0px;
+            outline: 0px;
+            border-radius: 15px;
+            background-color: #020c1b;
+            @include mobile{
+                width: 100%;
+            }
+
+                .card{
+                    border-radius: 15px;
+                }
+         
+
+                P{
+                    margin: 0px;
+                }
+                p:last-child{
+                    font-size: x-small;
+                }
+            }}
+        
+}
+// ********************************** movies section*******************************
+.moviessection{
+   
+    box-shadow: 0px 20px 100px 100px #020c1b;
+    background-color: #020c1b;
+    padding: 20px;
+    height: 90vh;
+    grid-template-rows: 1fr 4fr;
+    row-gap: 20px;
+    @include mobile{
+        width: 100%;
+    }
+    
+    
+    .item1{
+        color: grey;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+
+        .switchingTabs .tabItems .tabItem.active {
+            color: rgb(255, 255, 255);
+            background-color: #04152d;
+            border-radius: 15px;
+        }
+        
+        .switchingTabs {
+            height: 34px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 20px;
+            padding: 2px;
+        }
+        .switchingTabs .tabItems {
+            display: flex;
+            align-items: center;
+            height: 30px;
+            position: relative;
+        }
+        .switchingTabs .tabItems .tabItem {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            color: var(--black);
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+            transition: color 0.3s ease 0s;
+        }
+
+        .switchingTabs .tabItems .movingBg {
+            height: 30px;
+            width: 100px;
+            background-image: var(--gradient);
+            position: absolute;
+            left: 0px;
+            border-radius: 15px;
+            transition: left 0.4s cubic-bezier(0.88, -0.35, 0.565, 1.35) 0s;
+        }
+    }
+    .item2{
+
+        
+        height: 80%;
+        font-family: 'Poppins', sans-serif;
+        /* -webkit-user-select: none; */ /* You can leave or remove this line if not needed */
+        /* -moz-user-select: -moz-none; */ /* You can leave or remove this line if not needed */
+        -o-user-select: none;
+        user-select: none;
+        display: flex;
+        overflow: hidden;
+
+        // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        @include mobile{
+            width: 100%;
+        }
+       
+
+        .card{
+            margin-top: 30px;
+            width: 200px;
+            height: 100%;
+            overflow: hidden !important;
+            border: 0px;
+            outline: 0px;
+            border-radius: 20px;
+            background-color: #020c1b;
+
+            @include mobile{
+                width: 100%;
+            }
+                P{
+                    margin-top: 0px;
+                }
+                p:last-child{
+                    font-size: x-small;
+                }
+            }}
+        
+}
+// ********************************** series section    ***************************
+.seriesection{
+   
+    box-shadow: 0px 20px 100px 100px #020c1b;
+    background-color: #020c1b;
+    padding: 20px;
+    height: 90vh;
+    grid-template-rows: 1fr 4fr;
+    row-gap: 20px;
+    
+    
+    .item1{
+        color: grey;
+        display: flex;
+        height: 20%;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+
+        .switchingTabs .tabItems .tabItem.active {
+            color: rgb(255, 255, 255);
+            background-color: #04152d;
+            border-radius: 15px;
+        }
+        
+        .switchingTabs {
+            height: 34px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 20px;
+            padding: 2px;
+        }
+        .switchingTabs .tabItems {
+            display: flex;
+            align-items: center;
+            height: 30px;
+            position: relative;
+        }
+        .switchingTabs .tabItems .tabItem {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            color: var(--black);
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+            transition: color 0.3s ease 0s;
+        }
+
+        .switchingTabs .tabItems .movingBg {
+            height: 30px;
+            width: 100px;
+            background-image: var(--gradient);
+            position: absolute;
+            left: 0px;
+            border-radius: 15px;
+            transition: left 0.4s cubic-bezier(0.88, -0.35, 0.565, 1.35) 0s;
+        }
+    }
+    .item2{
+
+        
+        height: 80%;
+        font-family: 'Poppins', sans-serif;
+      
+        -o-user-select: none;
+        user-select: none;
+        display: flex;
+        overflow: hidden;
+
+        // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+       
+
+        .card{
+            margin-top: 30px;
+            width: 200px;
+            height: 100%;
+            overflow: hidden !important;
+            border: 0px;
+            outline: 0px;
+            border-radius: 15px;
+            background-color: #020c1b;
+
+                .card{
+                    border-radius: 15px;
+                }
+         
+
+                P{
+                    margin: 0px;
+                }
+                p:last-child{
+                    font-size: x-small;
+                }
+            }}
+        
+}
+// *************************** footer section *************************************
+.footer{
+    padding: 50px;
+    font-weight: 600;
+    color: gray;
+    @include mobile{
+        width: 100%;
+        padding: 25px;
+    }
+    div{
+        width: 75%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        @include mobile{
+            width: 100%;
+        }
+       
+        .item1{
+           
+            .logo{
+                outline: 5px solid goldenrod; 
+            }
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            color: goldenrod;
+            font-weight: 900px;
+            svg{
+                display: inline;
+            }
+        }
+        .item3{
+            display: flex;
+            flex-direction: row;
+            div:hover{
+                color: goldenrod;
+            }
+        }
+        .item4{
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            gap: 10px;
+            div:first-child{
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+            div:last-child{
+                
+                width: 100%;
+                display: flex;
+                align-items: center;
+
+            }
+        }
+    }
+}
+//*********************** movie explore styling ***********************************
+
+.movieexport{
+    display: grid;
+    @include mobile{
+        width: 100% !important;
+        
+    }
+    
+    .card{
+        background-color:#020c1b;
+        color: grey !important;
+        margin-top: 20px;
+        @include mobile{
+            height: 100%;
+            width: 100% !important;
+            object-fit: cover;
+        }
+
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .cardDetail{
+            @include mobile{
+                font-size: 20px;
+                width: 100%;
+                text-align: center;
+                
+            }
+            p{
+                margin: 0px;
+            }
+            p:last-child{
+                font-size: 10px;
+                @include mobile{
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+// **************************** CardDetails *********************************
+.cardDetails{
+    color: grey;
+    padding: 20px;
+    margin: 0;
+    background: black;
+    font-family: 'Montserrat', helvetica, arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+   
+
+    .movie_card{
+        position: relative;
+        display: block;
+        width: 800px;
+        height: 400px;
+        margin: 100px auto; 
+        overflow: hidden;
+        border-radius: 10px;
+        transition: all 0.4s;
+        @include mobile{
+            height: 100%;
+           
+        }
+       
+        &:hover{
+          transform: scale(1.02);
+          transition: all 0.4s;
+        }
+        .info_section{
+          position: relative;
+          width: 100%;
+          height: 100%;
+            background-blend-mode: multiply;
+          z-index: 2;
+          border-radius: 10px;
+          @include mobile{
+            height: 60vh;
+        }
+          .movie_header{
+            // position: relative;
+            padding: 25px;
+            height: 40%;
+            h2{
+              color: #fff;
+              font-weight: 400;
+            }
+            h4{
+              color: #9ac7fa;
+              font-weight: 400;
+            }
+           
+            .locandina{
+              position: relative;
+              float: left;
+              margin-right: 20px;
+              height: 120px;
+              box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0);
+            }
+          }
+          .movie_desc{
+            padding: 25px;
+            height: 100%;
+            position: relative;
+            @include mobile{
+                overflow: ellipsis !important;
+                 
+            }
+            .text{
+              color: #cfd6e1;
+                position: absolute;
+            }
+            .minutes{
+                display: inline-block;
+                margin-top: 10px;
+                color: #fff;
+                padding: 5px;
+                border-radius: 5px;
+                border: 1px solid rgba(255,255,255,0.13);
+              }
+              .type{
+                display: inline-block;
+                color: #cee4fd;
+                margin-left: 10px;
+              }
+          }
+          .movie_social{
+            height: 10%;
+            padding-left: 15px;
+            padding-bottom: 20px;
+            ul{
+              list-style: none;
+              padding: 0;
+              li{
+                display: inline-block;
+                color: rgba(255,255,255,0.4);
+                transition: color 0.3s;
+                transition-delay: 0.15s;
+                margin: 0 10px;
+                &:hover{
+                  transition: color 0.3s;
+                  color: rgba(255,255,255,0.8);
+                }
+                i{
+                  font-size: 19px;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+        .blur_back{
+          position: absolute;
+          top: 0;
+          z-index: 1;
+          height: 100%; right: 0;
+          background-size: cover;
+          border-radius: 11px;
+        }
+      }
+      
+      @media screen and (min-width: 768px) {
+        .movie_header{
+          width: 60%;
+        }
+        
+        .movie_desc{
+          width: 100%;
+        }
+        
+        .info_section{
+          background: linear-gradient(to right, #0d0d0c 40%, transparent 100%);
+        }
+        
+        .blur_back{
+          width: 80%;
+          background-position: -100% 10% !important;  
+        }
+      }
+      
+      @media screen and (max-width: 768px) {
+        .movie_card{
+          width: 95%;
+          margin: 70px auto; 
+          min-height: 350px;
+          height: auto;
+        }
+        
+        .blur_back{
+          width: 100%;
+          background-position: 50% 50% !important;  
+        }
+        
+        .movie_header{
+          width: 100%;
+          margin-top: 85px;
+        }
+        
+        .movie_desc{
+          width: 100%;
+        }
+        
+        .info_section{
+          background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
+          display: inline-grid;
+        }
+      }
+
+      #ave{
+        box-shadow: 0px 0px 150px -45px rgba(199,147,75, 0.7);
+        margin-bottom: 200px;
+        &:hover{
+          box-shadow: 0px 0px 120px -55px rgba(199,147,75, 0.7);
+        }
+      }
+   
+      
+}
+
+.cardDetails{
+    .card{
+        background-color: black;
+    }
+}
+
+
+// *****************  Page404 ***************************
+// item1
+.page404{
+    
+        @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Josefin+Slab');
+
+        @keyframes darken {
+          0%{ font-size: 100px;  color:#566573;}
+          50%{font-size: 200px; color:#273746}
+          100% {font-size: 250px; color:#17202a}
+        }
+        color: goldenrod;
+        
+        h1 {
+          font-family: 'Alfa Slab One', cursive;
+          margin: 0 auto;
+          inline: block;
+          text-align: center;
+          animation-name: darken;
+          animation-duration: 5s;
+          animation-iteration-count: infinite;
+        }
+        
+        h3 {
+          font-family: 'Josefin Slab', serif;
+          margin: 0 auto;
+          inline: block;
+          text-align: center;
+          font-size: 30px;
+        }
+    
+
+}
+>>>>>>> acaaa12d8a8ccc634b498022c5046da72e05f55a
