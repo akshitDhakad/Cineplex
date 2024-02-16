@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg  p-3 ">
-      <Link to={"/"}>
+     
         <div className="item1">
           <h2>
             <svg
@@ -22,7 +22,7 @@ function Navbar() {
 
           <h2 className="tracking-widest font-bold">Cineflix</h2>
         </div>
-      </Link>
+      
       <button
         className="navbar-toggler navbar-toggler-bg-color"
         type="button"
