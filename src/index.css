@@ -1,6 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,body{
     margin: 0px;
     padding: 0px;
+    min-width: 356px;
+    min-height: 100vh;
+    box-sizing: border-box;
     background-color: #00121f;
     color: white;
     font-family: sans-serif;
@@ -160,8 +167,10 @@ button{
 /* scroll bar styling ***************************** */
 
 ::-webkit-scrollbar {
-  width: 10px !important;
+  width: 8px !important;
+  
 }
+
 
 /* Change scrollbar track (background) color */
 ::-webkit-scrollbar-track {

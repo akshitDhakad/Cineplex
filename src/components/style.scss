@@ -12,8 +12,6 @@
   .navbar {
     background-color: #00121f92;
     display: flex;
-
-   
     .navbar-toggler-bg-color {
       background-color: goldenrod;
     }
@@ -23,6 +21,7 @@
       display: flex;
       align-items: center;
       color: goldenrod;
+      
     }
   
     .item2 {
@@ -66,20 +65,24 @@
             align-items: center;
             @include mobile{
                 width: 90%;
-            
             }
 
             h2{
+                text-align: center;
                 font-size: 5rem;
                 font-weight: 700;
                 @include mobile{
                     font-size: 3rem;
                 }
             }
+            h3{
+              text-align: center;
+              font-size: 2.5rem;
+              font-weight: 700;
+            }
 
             h4{
-                text-align: center;
-                
+                text-align: center;  
             }
             div:last-child{
                 @include mobile{

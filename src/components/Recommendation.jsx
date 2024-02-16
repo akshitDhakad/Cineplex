@@ -70,8 +70,9 @@ function Recommendation() {
 
   return (
     <div className="Recommendation">
-      <div className="item1">
-        <h4>Recommendation</h4>
+      <div className="item1 z-2 min-w-full">
+      
+        <h4 className="tracking-wider text-xl ">Recommendation</h4>
       </div>
       <div className="item2">
         {data.map((item) =>

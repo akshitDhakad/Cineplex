@@ -26,33 +26,32 @@ function Tseries() {
    
   return (
     <div className="tseries">
-
-        <div className="item1">
-            <div><h4>Top-Series</h4></div>
-            <div><Button data={setType}/></div>
+      <div className="item1">
+        <div>
+          <h4 className="text-blue-200 font-semibold">Top Series</h4>
         </div>
-        <div className="item2">
-            <div className="mcard-wrapper">
-            {data.map((item) =>
+        <div>
+          <Button data={setType} />
+        </div>
+      </div>
+      <div className="item2">
+        <div className="mcard-wrapper p-3">
+          {data.map((item) =>
             item.name && item.first_air_date && item.poster_path ? (
-             
-                <Mcard
-                  key={item.id}
-                  id={item.id}
-                  type={item.media_type}
-                  title={item.name}
-                  date={item.first_air_date}
-                  img={item.poster_path}
-                />
-              
-                ) : null
-              )}
-                  
-            </div>
-
-        </div> 
+              <Mcard
+                key={item.id}
+                id={item.id}
+                type={item.media_type}
+                title={item.name}
+                date={item.first_air_date}
+                img={item.poster_path}
+              />
+            ) : null
+          )}
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
 export default Tseries

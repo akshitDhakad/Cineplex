@@ -1,39 +1,40 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 function Button(props) {
-  const [active, setActive] = useState('day');
+  const [active, setActive] = useState("day");
 
   const handleClick = (group) => {
     setActive(group);
-    props.data(group)
+    props.data(group);
   };
 
   return (
     <div className="selector_wrap">
-      <div className="selector">
-        <div className={`anchor ${active === 'day' ? 'selected' : ''}`}>
+      <div className="selector hover:cursor-pointer">
+        <div className={`anchor ${active === "day" ? "selected" : ""}`}>
           <h6>
             <a
               className="no_click"
-              onClick={() => handleClick('day')}
+              onClick={() => handleClick("day")}
               data-panel="trending_scroller"
               data-group="day"
-            >Today <span className="glyphicons_v2 chevron-down"></span>
+            >
+              Today <span className="glyphicons_v2 chevron-down"></span>
             </a>
           </h6>
           <div className="background"></div>
         </div>
 
-        <div className={`anchor ${active === 'week' ? 'selected' : ''}`}>
+        <div className={`anchor ${active === "week" ? "selected" : ""}`}>
           <h6>
             <a
-            className="no_click"
-              onClick={() => handleClick('week')}
+              className="no_click"
+              onClick={() => handleClick("week")}
               data-panel="trending_scroller"
               data-group="week"
             >
               This Week
-            <span className="glyphicons_v2 chevron-down"></span>
+              <span className="glyphicons_v2 chevron-down"></span>
             </a>
           </h6>
         </div>
@@ -44,25 +45,8 @@ function Button(props) {
 
 export default Button;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // function Button() {
 
-  
 //   return (
 //     <div className="selector_wrap">
 //             <div className="selector">
