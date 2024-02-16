@@ -2,6 +2,8 @@ import {useEffect,useState} from "react"
 import { useLocation } from "react-router-dom";
 import Button from "./Button"
 import Mcard from "./Mcard";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 
 function SearchCard() {
@@ -42,17 +44,20 @@ function SearchCard() {
    
   return (
     <>
-    <div className="tmovies">
+      <Navbar />
+      <div className="tmovies">
         <div className="item1">
-            <div><h4>Movies</h4></div>
-            <div><Button /></div>
+          <div>
+            <h4 className="font-semibold text-blue-200">Movies</h4>
+          </div>
+          <div>
+            <Button />
+          </div>
         </div>
         <div className="item2">
-
-            <div className="mcard-wrapper">
+          <div className="mcard-wrapper p-3">
             {data.map((item) =>
-            item.original_title && item.release_date && item.poster_path ? (
-              
+              item.original_title && item.release_date && item.poster_path ? (
                 <Mcard
                   key={item.id}
                   type={item.media_type}
@@ -61,43 +66,40 @@ function SearchCard() {
                   date={item.release_date}
                   img={item.poster_path}
                 />
-             
-            ) : null
-          )}
-              
-            </div>
-
-        </div> 
-    </div>
-    <div className="tseries">
-
-    <div className="item1">
-        <div><h4>Top-Series</h4></div>
-        <div><Button /></div>
-    </div>
-    <div className="item2">
-        <div className="mcard-wrapper">
-        {sdata.map((item) =>
-        item.name && item.first_air_date && item.poster_path ? (
-         
-            <Mcard
-              key={item.id}
-              id={item.id}
-              type={item.media_type}
-              title={item.name}
-              date={item.first_air_date}
-              img={item.poster_path}
-            />
-          
-            ) : null
-          )}
-              
+              ) : null
+            )}
+          </div>
         </div>
-
-    </div> 
-</div>
-</>
-  )
+      </div>
+      <div className="tseries">
+        <div className="item1">
+          <div>
+            <h4 className="font-semibold text-blue-200">Top-Series</h4>
+          </div>
+          <div>
+            <Button />
+          </div>
+        </div>
+        <div className="item2">
+          <div className="mcard-wrapper p-3">
+            {sdata.map((item) =>
+              item.name && item.first_air_date && item.poster_path ? (
+                <Mcard
+                  key={item.id}
+                  id={item.id}
+                  type={item.media_type}
+                  title={item.name}
+                  date={item.first_air_date}
+                  img={item.poster_path}
+                />
+              ) : null
+            )}
+          </div>
+        </div>
+      </div>
+      <Footer/>
+    </>
+  );
 }
 
 export default SearchCard

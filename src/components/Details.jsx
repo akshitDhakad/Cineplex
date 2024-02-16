@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import Spinner from "./Spinner"
 import Recommendation from "./Recommendation";
+import Navbar from "./Navbar";
 
 
 
@@ -60,6 +61,7 @@ function Details() {
 
   return (
     <div className="details">
+    <Navbar/>
       {loading ? (
         <p><Spinner/></p>
       ) : error ? (
@@ -72,6 +74,7 @@ function Details() {
                 className="locandina"
                 src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
                 alt={data.title}
+                loading="lazy"
               />
               <h4>{data.title}</h4>
               <h6>{data.release_date}, {data.tagline}</h6>
@@ -94,7 +97,7 @@ function Details() {
               </ul>
             </div>
           </div>
-          <div className="blur_back tomb_back" style={backImg}></div>
+          <div className="blur_back tomb_back" loading="lazy" style={backImg}></div>
         </div>
       )}
 
