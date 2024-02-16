@@ -95,7 +95,7 @@ html,body{
   align-items: center;
   align-content: center;
   background-color: white;
-  padding: 2px;
+  padding: 5px;
 }
 
 .selector_wrap .anchor,.selected{
@@ -115,7 +115,7 @@ html,body{
 
 .selector_wrap h6{
   /* font-size: 1em; */
-  padding: 4px 20px;
+  padding: 5px 15px;
   margin-bottom: 0;
   white-space: nowrap;
   display: inline-flex;
